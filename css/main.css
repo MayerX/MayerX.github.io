@@ -1291,7 +1291,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #aa91ff;
+  background: #ffe0ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2597,12 +2597,10 @@ body {
 .content-wrap {
   background: #fff;
   opacity: 0.85;
-  border-radius: 20px;
 }
 .header-inner {
   background: rgba(255,255,255,0.91);
   opacity: 1;
-  border-radius: 20px;
 }
 .highlight {
   position: static;
@@ -2640,4 +2638,8 @@ highlight-wrap {
 }
 .highlight:hover .btn-copy {
   opacity: 1;
+}
+.content {
+  border-radius: 20px;
+  padding: 30px 60px 30px 60px;
 }
