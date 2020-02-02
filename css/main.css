@@ -1291,7 +1291,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #6571ff;
+  background: #aa91ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1531,9 +1531,10 @@ pre .javascript .function {
   }
 }
 .with-love {
-  color: #808080;
+  color: #ff0000;
   display: inline-block;
   margin: 0 5px;
+  animation: iconAnimate 1.33s ease-in-out infinite;
 }
 .powered-by,
 .theme-info {
@@ -2262,6 +2263,14 @@ ul.breadcrumb li + li:last-child {
 .tag-cloud a:hover {
   color: #222 !important;
 }
+.gt-header a,
+.gt-comments a,
+.gt-popup a {
+  border-bottom: none;
+}
+.gt-container .gt-popup .gt-action.is--active::before {
+  top: 0.7em;
+}
 .header {
   margin: 0 auto;
   position: relative;
@@ -2588,10 +2597,12 @@ body {
 .content-wrap {
   background: #fff;
   opacity: 0.85;
+  border-radius: 20px;
 }
 .header-inner {
   background: rgba(255,255,255,0.91);
   opacity: 1;
+  border-radius: 20px;
 }
 .highlight {
   position: static;
