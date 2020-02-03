@@ -1,45 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>mysql+Mac安装教程</title>
-    <url>/2020/02/03/mysql-Mac%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<a id="more"></a>
-
-<h2 id="在Mac上安装MYSQL"><a href="#在Mac上安装MYSQL" class="headerlink" title="在Mac上安装MYSQL"></a>在Mac上安装MYSQL</h2><ol>
-<li><p>在MYSQL官网上安装dmg包 ，前往下载界面<a href="https://dev.mysql.com/downloads/" target="_blank" rel="noopener">Community (GPL) Downloads »</a> （目前最稳定的版本是5.7版本）</p>
-</li>
-<li><p>在安装过程中，系统会默认给一个初始密码，因此务必要记住这个密码，用于第一次登陆MYSQL（这个密码通常是很复杂的， 因此之后会修改成自己需要的）<br><img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.KzjwLO/page1image41730048.png" alt="page1image41730048"></p>
-</li>
-<li><p>在Mac上启动MYSQL，点击start之后就会变成下面图片的样子<br> <img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.te3zyR/E3E311E8-4E10-4BA7-9978-AEEB706A52ED.png" alt="E3E311E8-4E10-4BA7-9978-AEEB706A52ED"><br> <img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.dPTlVy/2357E996-AB47-43E8-8B41-26330903039E.png" alt="2357E996-AB47-43E8-8B41-26330903039E"></p>
-</li>
-<li><p>之后的都在终端操作</p>
-<ol>
-<li><p>MYSQL默认安装在/usr/local/mysql目录，因此先在终端里进入该目录，再进入mysql目录里的bin目录</p>
-</li>
-<li><p><code>mysql -u root -p</code>这个命令是启动MYSQL的，密码就是刚开始的初始密码，使用<code>SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;你想要的密码&#39;);</code>和<code>FLUSH PRIVILEGES;</code>这两个命令，对密码进行修改</p>
-</li>
-<li><p>最后就是，每次要进去mysql目录里面启动，好麻烦，因此在环境变量里面增加路径。在终端开始的界面，里面执行<code>vim ~/.bash_profile</code>命令（vim操作），添加路径即可，之后可以直接运行，不需要再进去目录</p>
-<p><img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.YVBFbZ/2BEB5C9F-C2AF-4317-8A09-75A5DD5C997A.png" alt="2BEB5C9F-C2AF-4317-8A09-75A5DD5C997A"></p>
-</li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Mysql</category>
-        <category>Mac</category>
-      </categories>
-      <tags>
-        <tag>新手入门</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mysql建表约束</title>
     <url>/2020/02/03/%E5%BB%BA%E8%A1%A8%E7%BA%A6%E6%9D%9F/</url>
-    <content><![CDATA[<a id="more"></a>
+    <content><![CDATA[<p>对MySQL的约束了解</p>
+<a id="more"></a>
 
-<h2 id="建表约束"><a href="#建表约束" class="headerlink" title="建表约束"></a>建表约束</h2><p>对M有SQL的约束了解</p>
-<h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><ul>
+<h2 id="建表约束"><a href="#建表约束" class="headerlink" title="建表约束"></a>建表约束</h2><h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><ul>
 <li>概念：能够唯一确定一张表的一条记录，也就是通过给某个字段添加约束，今儿使得字段不重复且不为空。每一张表中有且仅有一个主键</li>
 <li>关键字key：primary</li>
 <li>格式：在设置参数的过程中，可以在参数之后直接加上primary key，也可以在最后（括号前面）加上primary key（参数，参数）</li>
@@ -100,10 +67,10 @@
   <entry>
     <title>mysql查询</title>
     <url>/2020/02/03/%E6%9F%A5%E8%AF%A2/</url>
-    <content><![CDATA[<a id="more"></a>
+    <content><![CDATA[<p>对MySQL查询的简单操作</p>
+<a id="more"></a>
 
-<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>对MySQL查询的简单操作</p>
-<ul>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><ul>
 <li>查询数据表<br><code>select * from 表名</code><br>（*表示的是所有信息，当然也可以是单独的字段信息或者是多个字段信息）<ul>
 <li>去重<br><code>select distinct * from 表名</code></li>
 <li>设置别名<br><code>select *（as 别名） from 表名 （as 别名）</code><br>（对于数据表而言，可以直接通过别名+’.’表示数据表里面的字段）</li>
@@ -124,7 +91,8 @@
   <entry>
     <title>终端操作数据库</title>
     <url>/2020/02/03/%E7%BB%88%E7%AB%AF%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-    <content><![CDATA[<a id="more"></a>
+    <content><![CDATA[<p>使用终端对MySQL数据库的基础操作</p>
+<a id="more"></a>
 
 <h2 id="终端操作数据库"><a href="#终端操作数据库" class="headerlink" title="终端操作数据库"></a>终端操作数据库</h2><h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><ul>
 <li><p>登陆数据库<br><code>mysql -u root -p （+ 密码）</code></p>
@@ -209,7 +177,9 @@
   <entry>
     <title>在eclipse下Jni（Java和C交互）的使用</title>
     <url>/2020/02/03/%E5%9C%A8eclipse%E4%B8%8BJni%EF%BC%88Java%E5%92%8CC%E4%BA%A4%E4%BA%92%EF%BC%89%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<a id="more"></a>
+    <content><![CDATA[<p>在eclipse下Jni的使用</p>
+<p>简单介绍一下Jni，JNI是Java Native Interface的缩写，它提供了若干的API实现了Java和其他语言的通信（主要是C&amp;C++）。</p>
+<a id="more"></a>
 
 <h2 id="在eclipse下Jni（Java和C交互）的使用"><a href="#在eclipse下Jni（Java和C交互）的使用" class="headerlink" title="在eclipse下Jni（Java和C交互）的使用"></a>在eclipse下Jni（Java和C交互）的使用</h2><p>备注：</p>
 <ol>
@@ -320,7 +290,8 @@
   <entry>
     <title>css选择器</title>
     <url>/2020/02/03/CSS%E9%80%89%E6%8B%A9%E5%99%A8/</url>
-    <content><![CDATA[<a id="more"></a>
+    <content><![CDATA[<p>CSS中最重要的概念之一，CSS选择器，简单介绍里面最基础的四个</p>
+<a id="more"></a>
 
 <h2 id="CSS选择器（基础四个）"><a href="#CSS选择器（基础四个）" class="headerlink" title="CSS选择器（基础四个）"></a>CSS选择器（基础四个）</h2><h3 id="标签选择器（元素选择器）"><a href="#标签选择器（元素选择器）" class="headerlink" title="标签选择器（元素选择器）"></a>标签选择器（元素选择器）</h3><ul>
 <li><p>针对一类标签，选择页面上所有这种类型的标签，通常描述为“共性”，无法描述某一个标签的“个性”</p>
@@ -402,7 +373,8 @@
   <entry>
     <title>Django</title>
     <url>/2020/02/03/Django%E5%88%9D%E5%AD%A6/</url>
-    <content><![CDATA[<a id="more"></a>
+    <content><![CDATA[<p>Django入门强前的一些对Django的了解，设计模式介绍还有相关的安装配置</p>
+<a id="more"></a>
 
 <h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"><a href="#MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。" class="headerlink" title="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"></a>MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。</h3><ol>
 <li>核心思想：解耦（高内聚低耦合）</li>
