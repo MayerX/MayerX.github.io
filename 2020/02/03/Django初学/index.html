@@ -52,19 +52,20 @@
   };
 </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="设计模式MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。 核心思想：解耦（高内聚低耦合） 优点：降低个个模块之间的耦合性，方便变更，更容易重构代码 类型： Model：数据交互，提供功能接口，通过这些接口获取所有功能 View：负责数据的显示和呈现，对用户的直接输出 Controller：从用户端获取用户的输入，可看作View的反向功能，主要处理用户交互">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://mayerx.github.io/2020/02/02/hello-world/index.html">
+<meta property="og:title" content="Django">
+<meta property="og:url" content="https://mayerx.github.io/2020/02/03/Django%E5%88%9D%E5%AD%A6/index.html">
 <meta property="og:site_name" content="Mayer&#39;s House">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="设计模式MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。 核心思想：解耦（高内聚低耦合） 优点：降低个个模块之间的耦合性，方便变更，更容易重构代码 类型： Model：数据交互，提供功能接口，通过这些接口获取所有功能 View：负责数据的显示和呈现，对用户的直接输出 Controller：从用户端获取用户的输入，可看作View的反向功能，主要处理用户交互">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-02T05:18:04.548Z">
-<meta property="article:modified_time" content="2020-02-02T10:06:50.228Z">
+<meta property="article:published_time" content="2020-02-03T05:58:13.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:13:22.205Z">
 <meta property="article:author" content="Mayer Johnson">
+<meta property="article:tag" content="Django">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://mayerx.github.io/2020/02/02/hello-world/">
+<link rel="canonical" href="https://mayerx.github.io/2020/02/03/Django%E5%88%9D%E5%AD%A6/">
 
 
 <script id="page-configurations">
@@ -76,7 +77,7 @@
   };
 </script>
 
-  <title>Hello World | Mayer's House</title>
+  <title>Django | Mayer's House</title>
   
 
 
@@ -186,7 +187,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mayerx.github.io/2020/02/02/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://mayerx.github.io/2020/02/03/Django%E5%88%9D%E5%AD%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -199,7 +200,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          Django
         </h1>
 
         <div class="post-meta">
@@ -210,7 +211,18 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-02 13:18:04 / 修改时间：18:06:50" itemprop="dateCreated datePublished" datetime="2020-02-02T13:18:04+08:00">2020-02-02</time>
+              <time title="创建时间：2020-02-03 13:58:13 / 修改时间：14:13:22" itemprop="dateCreated datePublished" datetime="2020-02-03T13:58:13+08:00">2020-02-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/" itemprop="url" rel="index">
+                    <span itemprop="name">新手入门</span>
+                  </a>
+                </span>
             </span>
 
           <br>
@@ -219,7 +231,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>357</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -238,21 +250,78 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
+        <h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"><a href="#MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。" class="headerlink" title="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"></a>MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。</h3><ol>
+<li>核心思想：解耦（高内聚低耦合）</li>
+<li>优点：降低个个模块之间的耦合性，方便变更，更容易重构代码</li>
+<li>类型：<ol>
+<li>Model：数据交互，提供功能接口，通过这些接口获取所有功能</li>
+<li>View：负责数据的显示和呈现，对用户的直接输出</li>
+<li>Controller：从用户端获取用户的输入，可看作View的反向功能，主要处理用户交互</li>
+</ol>
+</li>
+</ol>
+<h3 id="MTV设计模式：本质和MVC模式没有大致区别"><a href="#MTV设计模式：本质和MVC模式没有大致区别" class="headerlink" title="MTV设计模式：本质和MVC模式没有大致区别"></a>MTV设计模式：本质和MVC模式没有大致区别</h3><ol>
+<li>Model：负责业务对象和数据库的对象</li>
+<li>View：负责业务逻辑，并适当时候调用Model和Template</li>
+<li>Template：负责把页面展示给用户</li>
+<li>URL分发器（路由）：主要将一个个URL页面的请求分发给不同的View处理，View再屌用相应的Model和Template</li>
+</ol>
+<hr>
+<h2 id="创建过程"><a href="#创建过程" class="headerlink" title="创建过程"></a>创建过程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.创建项目</span><br><span class="line">   Django-admin startproject xxx(名字)</span><br><span class="line">   </span><br><span class="line">2.创建应用</span><br><span class="line">   Python3 manage.py startapp xxx(名字)</span><br><span class="line">   </span><br><span class="line">3.运行程序（后面可以加上端口，不然默认8080）</span><br><span class="line">	 Python3 manage.py runserver</span><br></pre></td></tr></table></figure>
 
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="配置mysql数据库"><a href="#配置mysql数据库" class="headerlink" title="配置mysql数据库"></a>配置mysql数据库</h2><ul>
+<li><p>安装pymysql库（注意正常情况下系统默认安装库是0.9版本，但是对于Django2.而言需要是需要1.3.*版本的，因此需要对Django进行一些修改）</p>
+</li>
+<li><p>首先找到base.py，路径为在python根目录里的插件包（site-package），Django -&gt; db -&gt; backends -&gt; mysql -&gt; base.py</p>
+</li>
+<li><p>在base.py中找到如下代码并注释</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> version &lt; (<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>):</span><br><span class="line"></span><br><span class="line"><span class="keyword">raise</span> ImproperlyConfigured(<span class="string">"mysqlclient 1.3.3 or newer is required; you have %s"</span> % Database.__version__)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在Django根目录的<strong>init.py</strong>中添加以下代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<ul>
+<li>然后在setting.py中设置数据库参数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">	<span class="string">'default'</span>: &#123;</span><br><span class="line">	<span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">	<span class="string">'NAME'</span>: <span class="string">'djangodemo'</span>,</span><br><span class="line">	<span class="string">'USER'</span>:<span class="string">'root'</span>,</span><br><span class="line">	<span class="string">'PASSWORD'</span>:<span class="string">'mayer964553'</span>,</span><br><span class="line">	<span class="string">'HOST'</span>:<span class="string">'localhost'</span>,</span><br><span class="line">	<span class="string">'PORT'</span>:<span class="string">'3306'</span>,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<ul>
+<li>最后将Django上的数据表迁移到数据库上</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python manage.py makemigrations</span><br><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<ul>
+<li><p>还有可能会出现另外一个问题，问题描述如下</p>
+<p>则解决方法就是将这个文件中第146行（就是问题所在的那一行）的decode改成encode，便解决问题了</p>
+</li>
+</ul>
+<hr>
+<h2 id="Django相关文件"><a href="#Django相关文件" class="headerlink" title="Django相关文件"></a>Django相关文件</h2><ol>
+<li><p>根目录</p>
+<ul>
+<li>manage.py：一个命令行工具，可以使我们用多种方法对项目交互</li>
+<li><em>_init.py</em> _：一个空文件，告诉python这个目录可以看作一个python包</li>
+<li>settings.py：项目的配置文件</li>
+<li>urls.py：项目的URL声明</li>
+<li>wigs.py：项目与WSGI兼容的web服务器入口</li>
+</ul>
+</li>
+<li><p>应用目录</p>
+<ul>
+<li>models.py</li>
+<li><strong>init</strong>.py</li>
+<li>admin.py</li>
+<li>tests.py</li>
+<li>apps.py</li>
+<li>views.py </li>
+</ul>
+</li>
+</ol>
 
     </div>
 
@@ -261,16 +330,22 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Django/" rel="tag"># Django</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/02/02/The-First-One/" rel="next" title="The First One">
-      The First One <i class="fa fa-chevron-right"></i>
+    <a href="/2020/02/03/Hexo%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" rel="prev" title="Hexo简单安装教程">
+      <i class="fa fa-chevron-left"></i> Hexo简单安装教程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/03/CSS%E9%80%89%E6%8B%A9%E5%99%A8/" rel="next" title="css选择器">
+      css选择器 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -332,7 +407,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"><span class="nav-number">1.1.</span> <span class="nav-text">MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MTV设计模式：本质和MVC模式没有大致区别"><span class="nav-number">1.2.</span> <span class="nav-text">MTV设计模式：本质和MVC模式没有大致区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建过程"><span class="nav-number">2.</span> <span class="nav-text">创建过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置mysql数据库"><span class="nav-number">3.</span> <span class="nav-text">配置mysql数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Django相关文件"><span class="nav-number">4.</span> <span class="nav-text">Django相关文件</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -471,7 +546,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo: 'MayerX.github.io',
       owner: 'MayerX',
       admin: ['MayerX'],
-      id: '35542b453031531dbf904c97aa1359fd',
+      id: '7067be148efa5c7ddaf3702fd01c3bf5',
         language: 'zh-CN',
       distractionFreeMode: true
     });
