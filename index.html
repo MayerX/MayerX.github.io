@@ -184,6 +184,479 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mayerx.github.io/2020/02/03/mysql-Mac%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Mayer Johnson">
+      <meta itemprop="description" content="咸鱼生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mayer's House">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/03/mysql-Mac%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">mysql+Mac安装教程</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-03 14:26:38 / 修改时间：14:28:55" itemprop="dateCreated datePublished" datetime="2020-02-03T14:26:38+08:00">2020-02-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/" itemprop="url" rel="index">
+                    <span itemprop="name">新手入门</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>499</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="在Mac上安装MYSQL"><a href="#在Mac上安装MYSQL" class="headerlink" title="在Mac上安装MYSQL"></a>在Mac上安装MYSQL</h1><ol>
+<li>在MYSQL官网上安装dmg包 ，前往下载界面<a href="https://dev.mysql.com/downloads/" target="_blank" rel="noopener">Community (GPL) Downloads »</a> （目前最稳定的版本是5.7版本）</li>
+<li>在安装过程中，系统会默认给一个初始密码，因此务必要记住这个密码，用于第一次登陆MYSQL（这个密码通常是很复杂的， 因此之后会修改成自己需要的）<br><img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.KzjwLO/page1image41730048.png" alt="page1image41730048"></li>
+<li>在Mac上启动MYSQL，点击start之后就会变成下面图片的样子<br><img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.te3zyR/E3E311E8-4E10-4BA7-9978-AEEB706A52ED.png" alt="E3E311E8-4E10-4BA7-9978-AEEB706A52ED"><br><img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.dPTlVy/2357E996-AB47-43E8-8B41-26330903039E.png" alt="2357E996-AB47-43E8-8B41-26330903039E"></li>
+<li>之后的都在终端操作<ol>
+<li>MYSQL默认安装在/usr/local/mysql目录，因此先在终端里进入该目录，再进入mysql目录里的bin目录</li>
+<li><code>mysql -u root -p</code>这个命令是启动MYSQL的，密码就是刚开始的初始密码，使用<code>SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;你想要的密码&#39;);</code>和<code>FLUSH PRIVILEGES;</code>这两个命令，对密码进行修改</li>
+<li>最后就是，每次要进去mysql目录里面启动，好麻烦，因此在环境变量里面增加路径。在终端开始的界面，里面执行<code>vim ~/.bash_profile</code>命令（vim操作），添加路径即可，之后可以直接运行，不需要再进去目录<br><img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.YVBFbZ/2BEB5C9F-C2AF-4317-8A09-75A5DD5C997A.png" alt="2BEB5C9F-C2AF-4317-8A09-75A5DD5C997A"></li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mayerx.github.io/2020/02/03/%E5%BB%BA%E8%A1%A8%E7%BA%A6%E6%9D%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Mayer Johnson">
+      <meta itemprop="description" content="咸鱼生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mayer's House">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/03/%E5%BB%BA%E8%A1%A8%E7%BA%A6%E6%9D%9F/" class="post-title-link" itemprop="url">mysql建表约束</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-03 14:26:38 / 修改时间：14:33:57" itemprop="dateCreated datePublished" datetime="2020-02-03T14:26:38+08:00">2020-02-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="建表约束"><a href="#建表约束" class="headerlink" title="建表约束"></a>建表约束</h2><h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><ul>
+<li>概念：能够唯一确定一张表的一条记录，也就是通过给某个字段添加约束，今儿使得字段不重复且不为空。每一张表中有且仅有一个主键</li>
+<li>关键字key：primary</li>
+<li>格式：在设置参数的过程中，可以在参数之后直接加上primary key，也可以在最后（括号前面）加上primary key（参数，参数）</li>
+<li>联合主键： 只要联合的主键加起来不重复就可以了（当多个表头设定了primary时，多个表头就是联合主键）</li>
+<li>修改主键<ul>
+<li>增加<br><code>alter table 表名 add primary key(参数）</code></li>
+<li>删除<br><code>alter table 表名 drop primary key</code></li>
+<li>修改<br><code>alter table 表名 modify 参数 类型 约束</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="自增约束"><a href="#自增约束" class="headerlink" title="自增约束"></a>自增约束</h3><ul>
+<li>概念：数据库自动赋值</li>
+<li>关键字key：auto_increment</li>
+<li>格式跟主键格式一样</li>
+<li>如果已经建立字段但是又想增加自增约束，这需要使用change命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 change 参数名 参数名 类型 not null auto_increment primary key;</span><br></pre></td></tr></table></figure>
+
+<p>（之所为需要写两次参数名，是因为change命令可以修改参数的名字，因此第二次写入的参数名就是修改后的名字）</p>
+<h3 id="唯一约束"><a href="#唯一约束" class="headerlink" title="唯一约束"></a>唯一约束</h3><ul>
+<li>概念：约束关键字修饰的字段的值不可以重复</li>
+<li>关键字：unique</li>
+<li>与主键约束区别：在这个字段中不能再出现相同的字符，当然联合主键的情况不算。但是可以为NULL</li>
+<li>删除<br><code>alter table 表名 drop index 参数名字</code></li>
+<li>修改<br><code>alter table 表名 modify 参数 参数类型 unique</code></li>
+</ul>
+<h3 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h3><ul>
+<li>概念：修饰的字段不为空</li>
+<li>关键字：not null</li>
+<li>修改使用change或者modify指令即可</li>
+<li>删除<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 NULL</code></li>
+</ul>
+<h3 id="默认约束"><a href="#默认约束" class="headerlink" title="默认约束"></a>默认约束</h3><ul>
+<li>概念：当我们插入字段值的时候，没有传入值，就会使用默认值</li>
+<li>关键字：default</li>
+<li>修改（或者使用modify指令也行）<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 default 默认值设定</code></li>
+<li>删除<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 default NULL</code>（就是将默认值设定为NULL）</li>
+</ul>
+<h3 id="外健约束"><a href="#外健约束" class="headerlink" title="外健约束"></a>外健约束</h3><ul>
+<li>涉及到主表和副表，主表和副表可以是同一个表中</li>
+<li>主表一定要有主键</li>
+<li>数据类型，数目一样</li>
+<li>关键词：foreign key</li>
+<li>添加<br><code>constraint 外健名 foreign key（主表字段名） references 副表名（字段名）</code></li>
+<li>修改<br><code>alter table 表名 add constraint 外健名 foreign key（主表字段名） references 副表名（字段名）</code></li>
+<li>删除<br><code>alter table 表名 drop foreign key 外键名</code></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mayerx.github.io/2020/02/03/%E6%9F%A5%E8%AF%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Mayer Johnson">
+      <meta itemprop="description" content="咸鱼生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mayer's House">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/03/%E6%9F%A5%E8%AF%A2/" class="post-title-link" itemprop="url">mysql查询</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-03 14:26:38 / 修改时间：14:34:14" itemprop="dateCreated datePublished" datetime="2020-02-03T14:26:38+08:00">2020-02-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index">
+                    <span itemprop="name">技巧</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>408</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><ul>
+<li>查询数据表<br><code>select * from 表名</code><br>（*表示的是所有信息，当然也可以是单独的字段信息或者是多个字段信息）<ul>
+<li>去重<br><code>select distinct * from 表名</code></li>
+<li>设置别名<br><code>select *（as 别名） from 表名 （as 别名）</code><br>（对于数据表而言，可以直接通过别名+’.’表示数据表里面的字段）</li>
+<li>限制行数<br><code>select * from 表名 limit 数量（起，终）</code></li>
+<li>排序<br><code>select * from 表名 order by 字段</code><br>（排序可以根据多个条件排序，顺序先是前面的再到后面的）<br>（asc / desc 放在字段后面，asc表示升序，desc表示降序）</li>
+<li>查询<br><code>select * from 表名 where 条件（&gt;&lt;=!)(and)</code><br><code>select * from 表名 where 字段（通常是字符串） like 条件</code><br>（like的条件中有%和_两种，%百分号可以表示任何字符串，并且该字符串可以出现任意次，但是是不注意大小写的。_下画线只匹配单个字符，而不是多个字符，也不是 0 个字符。）</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mayerx.github.io/2020/02/03/%E7%BB%88%E7%AB%AF%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Mayer Johnson">
+      <meta itemprop="description" content="咸鱼生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mayer's House">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/03/%E7%BB%88%E7%AB%AF%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">终端操作数据库</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-03 14:26:38 / 修改时间：14:35:26" itemprop="dateCreated datePublished" datetime="2020-02-03T14:26:38+08:00">2020-02-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E5%B7%A7/" itemprop="url" rel="index">
+                    <span itemprop="name">技巧</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>963</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="终端操作数据库"><a href="#终端操作数据库" class="headerlink" title="终端操作数据库"></a>终端操作数据库</h2><h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><ul>
+<li><p>登陆数据库<br><code>mysql -u root -p （+ 密码）</code></p>
+</li>
+<li><p>查询数据库服务器中所有数据库<br><code>show databases</code></p>
+</li>
+<li><p>选用某一个数据库中数据<br><code>use 想用的数据库的名字</code><br><code>select * from 数据库里面的表;</code></p>
+</li>
+<li><p>退出<br><code>exit;</code></p>
+</li>
+<li><p>创建数据库<br><code>creat database 名字;</code></p>
+</li>
+<li><p>查看某个数据库中所有的数据表<br><code>show tables;</code></p>
+</li>
+<li><p>创建数据表<br><code>CREATE TABLE 名字（表头 + 表头类型）;</code></p>
+</li>
+<li><p>查看数据表的结构<br><code>describe 名字</code></p>
+</li>
+<li><p>删除数据表<br><code>drop table 表名</code></p>
+</li>
+<li><p>添加数据记录<br><code>INSERT INTO 表</code><br><code>VALUES （‘参数’）</code></p>
+</li>
+<li><p>删除数据<br><code>delete from 表名 where 其中一个参数（一个参数表示一行数据）</code></p>
+</li>
+<li><p>修改数据<br><code>update 表名 set 想要修改的参数 where 修改参数的那一行里的某一个参数</code></p>
+</li>
+<li><p>查看默认字符格式<br><code>SHOW VARIABLES LIKE &#39;character%&#39;;</code></p>
+</li>
+<li><p>修改默认字符格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set character_set_client&#x3D;utf8;</span><br><span class="line">set character_set_connection&#x3D;utf8;</span><br><span class="line">set character_set_database&#x3D;utf8;</span><br><span class="line">set character_set_results&#x3D;utf8;</span><br><span class="line">set character_set_server&#x3D;utf8;</span><br></pre></td></tr></table></figure></li>
+<li><p>输错命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\c</span><br><span class="line">&#39;\c</span><br></pre></td></tr></table></figure>
+<h3 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h3></li>
+<li><p>数值（从上到下，依次范围逐渐增大，常用INT）</p>
+<ul>
+<li>TINYINT</li>
+<li>SMALLINT</li>
+<li>MEDUIUMINT</li>
+<li>INT &amp; INTEGER</li>
+<li>BIGINT</li>
+<li>FLOAT</li>
+<li>DOUBLE</li>
+<li>DECIMAL</li>
+</ul>
+</li>
+<li><p>日期/时间</p>
+<ul>
+<li>DATE：YYYY-MM-DD</li>
+<li>TIEM：HH:MM:SS</li>
+<li>YEAR：YYYY</li>
+<li>DATETIME：YYYY-MM-DD HH:MM:SS</li>
+<li>TIMESTAMP：YYYYMMDD HHMMSS</li>
+</ul>
+</li>
+<li><p>字符串</p>
+<ul>
+<li>CHAR：定长字符串</li>
+<li>VARCHAR：变长字符串</li>
+<li>TINYBLOB：不超过 255 个字符的二进制字符串</li>
+<li>TINYTEXT：短文本字符串</li>
+<li>BLOB：二进制形式的长文本数据</li>
+<li>TEXT：长文本数据</li>
+<li>MEDIUMBLOB：二进制形式的中等长度文本数据</li>
+<li>MEDIUMTEXT：中等长度文本数据</li>
+<li>LONGBLOB：二进制形式的极大文本数据</li>
+<li>LONGTEXT：极大文本数据</li>
+</ul>
+</li>
+<li><p>注意：<br>日期按照格式，数值和字符串按照大小</p>
+</li>
+</ul>
+<p>#MYSQL</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://mayerx.github.io/2020/02/03/%E5%9C%A8eclipse%E4%B8%8BJni%EF%BC%88Java%E5%92%8CC%E4%BA%A4%E4%BA%92%EF%BC%89%E7%9A%84%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -976,20 +1449,20 @@ public native double getDoubleFromC(String inputString);</code></pre><p>}</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1027,12 +1500,12 @@ public native double getDoubleFromC(String inputString);</code></pre><p>}</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">7k</span>
+    <span title="站点总字数">10k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6 分钟</span>
+    <span title="站点阅读时长">9 分钟</span>
 </div>
 
         
