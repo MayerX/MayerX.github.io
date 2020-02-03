@@ -3,8 +3,9 @@
   <entry>
     <title>mysql+Mac安装教程</title>
     <url>/2020/02/03/mysql-Mac%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="在Mac上安装MYSQL"><a href="#在Mac上安装MYSQL" class="headerlink" title="在Mac上安装MYSQL"></a>在Mac上安装MYSQL</h2><a id="more"></a>
-<ol>
+    <content><![CDATA[<a id="more"></a>
+
+<h2 id="在Mac上安装MYSQL"><a href="#在Mac上安装MYSQL" class="headerlink" title="在Mac上安装MYSQL"></a>在Mac上安装MYSQL</h2><ol>
 <li><p>在MYSQL官网上安装dmg包 ，前往下载界面<a href="https://dev.mysql.com/downloads/" target="_blank" rel="noopener">Community (GPL) Downloads »</a> （目前最稳定的版本是5.7版本）</p>
 </li>
 <li><p>在安装过程中，系统会默认给一个初始密码，因此务必要记住这个密码，用于第一次登陆MYSQL（这个密码通常是很复杂的， 因此之后会修改成自己需要的）<br><img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.KzjwLO/page1image41730048.png" alt="page1image41730048"></p>
@@ -25,18 +26,107 @@
 </ol>
 ]]></content>
       <categories>
-        <category>新手入门</category>
+        <category>Mysql</category>
+        <category>Mac</category>
       </categories>
       <tags>
-        <tag>Mysql, Mac</tag>
+        <tag>新手入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql建表约束</title>
+    <url>/2020/02/03/%E5%BB%BA%E8%A1%A8%E7%BA%A6%E6%9D%9F/</url>
+    <content><![CDATA[<a id="more"></a>
+
+<h2 id="建表约束"><a href="#建表约束" class="headerlink" title="建表约束"></a>建表约束</h2><p>对M有SQL的约束了解</p>
+<h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><ul>
+<li>概念：能够唯一确定一张表的一条记录，也就是通过给某个字段添加约束，今儿使得字段不重复且不为空。每一张表中有且仅有一个主键</li>
+<li>关键字key：primary</li>
+<li>格式：在设置参数的过程中，可以在参数之后直接加上primary key，也可以在最后（括号前面）加上primary key（参数，参数）</li>
+<li>联合主键： 只要联合的主键加起来不重复就可以了（当多个表头设定了primary时，多个表头就是联合主键）</li>
+<li>修改主键<ul>
+<li>增加<br><code>alter table 表名 add primary key(参数）</code></li>
+<li>删除<br><code>alter table 表名 drop primary key</code></li>
+<li>修改<br><code>alter table 表名 modify 参数 类型 约束</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="自增约束"><a href="#自增约束" class="headerlink" title="自增约束"></a>自增约束</h3><ul>
+<li>概念：数据库自动赋值</li>
+<li>关键字key：auto_increment</li>
+<li>格式跟主键格式一样</li>
+<li>如果已经建立字段但是又想增加自增约束，这需要使用change命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alter table 表名 change 参数名 参数名 类型 not null auto_increment primary key;</span><br></pre></td></tr></table></figure>
+
+<p>（之所为需要写两次参数名，是因为change命令可以修改参数的名字，因此第二次写入的参数名就是修改后的名字）</p>
+<h3 id="唯一约束"><a href="#唯一约束" class="headerlink" title="唯一约束"></a>唯一约束</h3><ul>
+<li>概念：约束关键字修饰的字段的值不可以重复</li>
+<li>关键字：unique</li>
+<li>与主键约束区别：在这个字段中不能再出现相同的字符，当然联合主键的情况不算。但是可以为NULL</li>
+<li>删除<br><code>alter table 表名 drop index 参数名字</code></li>
+<li>修改<br><code>alter table 表名 modify 参数 参数类型 unique</code></li>
+</ul>
+<h3 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h3><ul>
+<li>概念：修饰的字段不为空</li>
+<li>关键字：not null</li>
+<li>修改使用change或者modify指令即可</li>
+<li>删除<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 NULL</code></li>
+</ul>
+<h3 id="默认约束"><a href="#默认约束" class="headerlink" title="默认约束"></a>默认约束</h3><ul>
+<li>概念：当我们插入字段值的时候，没有传入值，就会使用默认值</li>
+<li>关键字：default</li>
+<li>修改（或者使用modify指令也行）<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 default 默认值设定</code></li>
+<li>删除<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 default NULL</code>（就是将默认值设定为NULL）</li>
+</ul>
+<h3 id="外健约束"><a href="#外健约束" class="headerlink" title="外健约束"></a>外健约束</h3><ul>
+<li>涉及到主表和副表，主表和副表可以是同一个表中</li>
+<li>主表一定要有主键</li>
+<li>数据类型，数目一样</li>
+<li>关键词：foreign key</li>
+<li>添加<br><code>constraint 外健名 foreign key（主表字段名） references 副表名（字段名）</code></li>
+<li>修改<br><code>alter table 表名 add constraint 外健名 foreign key（主表字段名） references 副表名（字段名）</code></li>
+<li>删除<br><code>alter table 表名 drop foreign key 外键名</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Mysql</category>
+        <category>约束</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql查询</title>
+    <url>/2020/02/03/%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[<a id="more"></a>
+
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>对MySQL查询的简单操作</p>
+<ul>
+<li>查询数据表<br><code>select * from 表名</code><br>（*表示的是所有信息，当然也可以是单独的字段信息或者是多个字段信息）<ul>
+<li>去重<br><code>select distinct * from 表名</code></li>
+<li>设置别名<br><code>select *（as 别名） from 表名 （as 别名）</code><br>（对于数据表而言，可以直接通过别名+’.’表示数据表里面的字段）</li>
+<li>限制行数<br><code>select * from 表名 limit 数量（起，终）</code></li>
+<li>排序<br><code>select * from 表名 order by 字段</code><br>（排序可以根据多个条件排序，顺序先是前面的再到后面的）<br>（asc / desc 放在字段后面，asc表示升序，desc表示降序）</li>
+<li>查询<br><code>select * from 表名 where 条件（&gt;&lt;=!)(and)</code><br><code>select * from 表名 where 字段（通常是字符串） like 条件</code><br>（like的条件中有%和_两种，%百分号可以表示任何字符串，并且该字符串可以出现任意次，但是是不注意大小写的。_下画线只匹配单个字符，而不是多个字符，也不是 0 个字符。）</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Mysql</category>
+      </categories>
+      <tags>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
     <title>终端操作数据库</title>
     <url>/2020/02/03/%E7%BB%88%E7%AB%AF%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-    <content><![CDATA[<h2 id="终端操作数据库"><a href="#终端操作数据库" class="headerlink" title="终端操作数据库"></a>终端操作数据库</h2><a id="more"></a>
+    <content><![CDATA[<a id="more"></a>
 
-<h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><ul>
+<h2 id="终端操作数据库"><a href="#终端操作数据库" class="headerlink" title="终端操作数据库"></a>终端操作数据库</h2><h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><ul>
 <li><p>登陆数据库<br><code>mysql -u root -p （+ 密码）</code></p>
 </li>
 <li><p>查询数据库服务器中所有数据库<br><code>show databases</code></p>
@@ -109,109 +199,23 @@
 <p>#MYSQL</p>
 ]]></content>
       <categories>
-        <category>技巧</category>
+        <category>Mysql</category>
+        <category>终端</category>
       </categories>
       <tags>
-        <tag>Mysql, 终端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mysql查询</title>
-    <url>/2020/02/03/%E6%9F%A5%E8%AF%A2/</url>
-    <content><![CDATA[<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>对MySQL查询的简单操作</p>
-<a id="more"></a>
-
-<ul>
-<li>查询数据表<br><code>select * from 表名</code><br>（*表示的是所有信息，当然也可以是单独的字段信息或者是多个字段信息）<ul>
-<li>去重<br><code>select distinct * from 表名</code></li>
-<li>设置别名<br><code>select *（as 别名） from 表名 （as 别名）</code><br>（对于数据表而言，可以直接通过别名+’.’表示数据表里面的字段）</li>
-<li>限制行数<br><code>select * from 表名 limit 数量（起，终）</code></li>
-<li>排序<br><code>select * from 表名 order by 字段</code><br>（排序可以根据多个条件排序，顺序先是前面的再到后面的）<br>（asc / desc 放在字段后面，asc表示升序，desc表示降序）</li>
-<li>查询<br><code>select * from 表名 where 条件（&gt;&lt;=!)(and)</code><br><code>select * from 表名 where 字段（通常是字符串） like 条件</code><br>（like的条件中有%和_两种，%百分号可以表示任何字符串，并且该字符串可以出现任意次，但是是不注意大小写的。_下画线只匹配单个字符，而不是多个字符，也不是 0 个字符。）</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技巧</category>
-      </categories>
-      <tags>
-        <tag>Mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mysql建表约束</title>
-    <url>/2020/02/03/%E5%BB%BA%E8%A1%A8%E7%BA%A6%E6%9D%9F/</url>
-    <content><![CDATA[<h2 id="建表约束"><a href="#建表约束" class="headerlink" title="建表约束"></a>建表约束</h2><p>对M有SQL的约束了解</p>
-<a id="more"></a>
-
-<h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><ul>
-<li>概念：能够唯一确定一张表的一条记录，也就是通过给某个字段添加约束，今儿使得字段不重复且不为空。每一张表中有且仅有一个主键</li>
-<li>关键字key：primary</li>
-<li>格式：在设置参数的过程中，可以在参数之后直接加上primary key，也可以在最后（括号前面）加上primary key（参数，参数）</li>
-<li>联合主键： 只要联合的主键加起来不重复就可以了（当多个表头设定了primary时，多个表头就是联合主键）</li>
-<li>修改主键<ul>
-<li>增加<br><code>alter table 表名 add primary key(参数）</code></li>
-<li>删除<br><code>alter table 表名 drop primary key</code></li>
-<li>修改<br><code>alter table 表名 modify 参数 类型 约束</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="自增约束"><a href="#自增约束" class="headerlink" title="自增约束"></a>自增约束</h3><ul>
-<li>概念：数据库自动赋值</li>
-<li>关键字key：auto_increment</li>
-<li>格式跟主键格式一样</li>
-<li>如果已经建立字段但是又想增加自增约束，这需要使用change命令</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alter table 表名 change 参数名 参数名 类型 not null auto_increment primary key;</span><br></pre></td></tr></table></figure>
-
-<p>（之所为需要写两次参数名，是因为change命令可以修改参数的名字，因此第二次写入的参数名就是修改后的名字）</p>
-<h3 id="唯一约束"><a href="#唯一约束" class="headerlink" title="唯一约束"></a>唯一约束</h3><ul>
-<li>概念：约束关键字修饰的字段的值不可以重复</li>
-<li>关键字：unique</li>
-<li>与主键约束区别：在这个字段中不能再出现相同的字符，当然联合主键的情况不算。但是可以为NULL</li>
-<li>删除<br><code>alter table 表名 drop index 参数名字</code></li>
-<li>修改<br><code>alter table 表名 modify 参数 参数类型 unique</code></li>
-</ul>
-<h3 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h3><ul>
-<li>概念：修饰的字段不为空</li>
-<li>关键字：not null</li>
-<li>修改使用change或者modify指令即可</li>
-<li>删除<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 NULL</code></li>
-</ul>
-<h3 id="默认约束"><a href="#默认约束" class="headerlink" title="默认约束"></a>默认约束</h3><ul>
-<li>概念：当我们插入字段值的时候，没有传入值，就会使用默认值</li>
-<li>关键字：default</li>
-<li>修改（或者使用modify指令也行）<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 default 默认值设定</code></li>
-<li>删除<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 default NULL</code>（就是将默认值设定为NULL）</li>
-</ul>
-<h3 id="外健约束"><a href="#外健约束" class="headerlink" title="外健约束"></a>外健约束</h3><ul>
-<li>涉及到主表和副表，主表和副表可以是同一个表中</li>
-<li>主表一定要有主键</li>
-<li>数据类型，数目一样</li>
-<li>关键词：foreign key</li>
-<li>添加<br><code>constraint 外健名 foreign key（主表字段名） references 副表名（字段名）</code></li>
-<li>修改<br><code>alter table 表名 add constraint 外健名 foreign key（主表字段名） references 副表名（字段名）</code></li>
-<li>删除<br><code>alter table 表名 drop foreign key 外键名</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>Mysql, 约束</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
     <title>在eclipse下Jni（Java和C交互）的使用</title>
     <url>/2020/02/03/%E5%9C%A8eclipse%E4%B8%8BJni%EF%BC%88Java%E5%92%8CC%E4%BA%A4%E4%BA%92%EF%BC%89%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="在eclipse下Jni（Java和C交互）的使用"><a href="#在eclipse下Jni（Java和C交互）的使用" class="headerlink" title="在eclipse下Jni（Java和C交互）的使用"></a>在eclipse下Jni（Java和C交互）的使用</h2><p>备注：</p>
+    <content><![CDATA[<a id="more"></a>
+
+<h2 id="在eclipse下Jni（Java和C交互）的使用"><a href="#在eclipse下Jni（Java和C交互）的使用" class="headerlink" title="在eclipse下Jni（Java和C交互）的使用"></a>在eclipse下Jni（Java和C交互）的使用</h2><p>备注：</p>
 <ol>
 <li>对于Mac Jni的使用，我是使用Mac的终端调试运行的，但也是可以在eclipse上面使用Jni（但是我自己不太会）</li>
 <li>而对于Window上的Jni而言，网上教程会更多，而且和Mac上面有挺多的东西是相同的</li>
 </ol>
-<a id="more"></a>
-
 <hr>
 <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
 <p>JNI是Java Native Interface的缩写，它提供了若干的API实现了Java和其他语言的通信（主要是C&amp;C++）。从Java1.1开始，JNI标准成为java平台的一部分，它允许Java代码和其他语言写的代码进行交互。JNI一开始是为了本地已编译语言，尤其是C和C++而设计的，但是它并不妨碍你使用其他编程语言，只要调用约定受支持就可以了。使用java与本地已编译的代码交互，通常会丧失平台可移植性。但是，有些情况下这样做是可以接受的，甚至是必须的。例如，使用一些旧的库，与硬件、操作系统进行交互，或者为了提高程序的性能。JNI标准至少要保证本地代码能工作在任何Java 虚拟机环境。（百度百科介绍）</p>
@@ -306,18 +310,19 @@
 </ul>
 ]]></content>
       <categories>
-        <category>技巧</category>
+        <category>Jni</category>
+        <category>eclipse</category>
       </categories>
       <tags>
-        <tag>Jni, eclipse</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
     <title>css选择器</title>
     <url>/2020/02/03/CSS%E9%80%89%E6%8B%A9%E5%99%A8/</url>
-    <content><![CDATA[<h2 id="CSS选择器（基础四个）"><a href="#CSS选择器（基础四个）" class="headerlink" title="CSS选择器（基础四个）"></a>CSS选择器（基础四个）</h2><a id="more"></a>
+    <content><![CDATA[<a id="more"></a>
 
-<h3 id="标签选择器（元素选择器）"><a href="#标签选择器（元素选择器）" class="headerlink" title="标签选择器（元素选择器）"></a>标签选择器（元素选择器）</h3><ul>
+<h2 id="CSS选择器（基础四个）"><a href="#CSS选择器（基础四个）" class="headerlink" title="CSS选择器（基础四个）"></a>CSS选择器（基础四个）</h2><h3 id="标签选择器（元素选择器）"><a href="#标签选择器（元素选择器）" class="headerlink" title="标签选择器（元素选择器）"></a>标签选择器（元素选择器）</h3><ul>
 <li><p>针对一类标签，选择页面上所有这种类型的标签，通常描述为“共性”，无法描述某一个标签的“个性”</p>
 </li>
 <li><p>注意：</p>
@@ -387,18 +392,19 @@
 </ul>
 ]]></content>
       <categories>
-        <category>简单介绍</category>
+        <category>CSS</category>
+        <category>CSS选择器</category>
       </categories>
       <tags>
-        <tag>CSS, CSS选择器</tag>
+        <tag>简单介绍</tag>
       </tags>
   </entry>
   <entry>
     <title>Django</title>
     <url>/2020/02/03/Django%E5%88%9D%E5%AD%A6/</url>
-    <content><![CDATA[<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><a id="more"></a>
+    <content><![CDATA[<a id="more"></a>
 
-<h3 id="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"><a href="#MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。" class="headerlink" title="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"></a>MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。</h3><ol>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"><a href="#MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。" class="headerlink" title="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"></a>MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。</h3><ol>
 <li>核心思想：解耦（高内聚低耦合）</li>
 <li>优点：降低个个模块之间的耦合性，方便变更，更容易重构代码</li>
 <li>类型：<ol>
@@ -472,10 +478,10 @@
 </ol>
 ]]></content>
       <categories>
-        <category>新手入门</category>
+        <category>Django</category>
       </categories>
       <tags>
-        <tag>Django</tag>
+        <tag>新手入门</tag>
       </tags>
   </entry>
   <entry>
@@ -487,10 +493,10 @@
 <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p><em>这一步很简单，所以就快速略过，只要看官方的文档就能安装成功，<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">点击进了Hexo官方文档</a></em></p>
 ]]></content>
       <categories>
-        <category>新手入门</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>新手入门</tag>
       </tags>
   </entry>
   <entry>
@@ -499,10 +505,10 @@
     <content><![CDATA[<p>当你看到这篇博客的时候，说明这个个人博客算是搭建完成了，后期还会继续完善</p>
 ]]></content>
       <categories>
-        <category>新手入门</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>教程</tag>
+        <tag>新手入门</tag>
       </tags>
   </entry>
   <entry>
