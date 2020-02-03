@@ -1,6 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>mysql建表约束</title>
+    <url>/2020/02/03/%E5%BB%BA%E8%A1%A8%E7%BA%A6%E6%9D%9F/</url>
+    <content><![CDATA[<h2 id="建表约束"><a href="#建表约束" class="headerlink" title="建表约束"></a>建表约束</h2><p>对M有SQL的约束了解</p>
+<a id="more"></a>
+
+<h3 id="主键约束"><a href="#主键约束" class="headerlink" title="主键约束"></a>主键约束</h3><ul>
+<li>概念：能够唯一确定一张表的一条记录，也就是通过给某个字段添加约束，今儿使得字段不重复且不为空。每一张表中有且仅有一个主键</li>
+<li>关键字key：primary</li>
+<li>格式：在设置参数的过程中，可以在参数之后直接加上primary key，也可以在最后（括号前面）加上primary key（参数，参数）</li>
+<li>联合主键： 只要联合的主键加起来不重复就可以了（当多个表头设定了primary时，多个表头就是联合主键）</li>
+<li>修改主键<ul>
+<li>增加<br><code>alter table 表名 add primary key(参数）</code></li>
+<li>删除<br><code>alter table 表名 drop primary key</code></li>
+<li>修改<br><code>alter table 表名 modify 参数 类型 约束</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="自增约束"><a href="#自增约束" class="headerlink" title="自增约束"></a>自增约束</h3><ul>
+<li>概念：数据库自动赋值</li>
+<li>关键字key：auto_increment</li>
+<li>格式跟主键格式一样</li>
+<li>如果已经建立字段但是又想增加自增约束，这需要使用change命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alter table 表名 change 参数名 参数名 类型 not null auto_increment primary key;</span><br></pre></td></tr></table></figure>
+
+<p>（之所为需要写两次参数名，是因为change命令可以修改参数的名字，因此第二次写入的参数名就是修改后的名字）</p>
+<h3 id="唯一约束"><a href="#唯一约束" class="headerlink" title="唯一约束"></a>唯一约束</h3><ul>
+<li>概念：约束关键字修饰的字段的值不可以重复</li>
+<li>关键字：unique</li>
+<li>与主键约束区别：在这个字段中不能再出现相同的字符，当然联合主键的情况不算。但是可以为NULL</li>
+<li>删除<br><code>alter table 表名 drop index 参数名字</code></li>
+<li>修改<br><code>alter table 表名 modify 参数 参数类型 unique</code></li>
+</ul>
+<h3 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h3><ul>
+<li>概念：修饰的字段不为空</li>
+<li>关键字：not null</li>
+<li>修改使用change或者modify指令即可</li>
+<li>删除<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 NULL</code></li>
+</ul>
+<h3 id="默认约束"><a href="#默认约束" class="headerlink" title="默认约束"></a>默认约束</h3><ul>
+<li>概念：当我们插入字段值的时候，没有传入值，就会使用默认值</li>
+<li>关键字：default</li>
+<li>修改（或者使用modify指令也行）<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 default 默认值设定</code></li>
+<li>删除<br><code>alter table 表名 change cloumn 参数名 参数名 参数类型 default NULL</code>（就是将默认值设定为NULL）</li>
+</ul>
+<h3 id="外健约束"><a href="#外健约束" class="headerlink" title="外健约束"></a>外健约束</h3><ul>
+<li>涉及到主表和副表，主表和副表可以是同一个表中</li>
+<li>主表一定要有主键</li>
+<li>数据类型，数目一样</li>
+<li>关键词：foreign key</li>
+<li>添加<br><code>constraint 外健名 foreign key（主表字段名） references 副表名（字段名）</code></li>
+<li>修改<br><code>alter table 表名 add constraint 外健名 foreign key（主表字段名） references 副表名（字段名）</code></li>
+<li>删除<br><code>alter table 表名 drop foreign key 外键名</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Mysql, 约束</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql+Mac安装教程</title>
+    <url>/2020/02/03/mysql-Mac%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="在Mac上安装MYSQL"><a href="#在Mac上安装MYSQL" class="headerlink" title="在Mac上安装MYSQL"></a>在Mac上安装MYSQL</h2><a id="more"></a>
+<ol>
+<li><p>在MYSQL官网上安装dmg包 ，前往下载界面<a href="https://dev.mysql.com/downloads/" target="_blank" rel="noopener">Community (GPL) Downloads »</a> （目前最稳定的版本是5.7版本）</p>
+</li>
+<li><p>在安装过程中，系统会默认给一个初始密码，因此务必要记住这个密码，用于第一次登陆MYSQL（这个密码通常是很复杂的， 因此之后会修改成自己需要的）<br><img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.KzjwLO/page1image41730048.png" alt="page1image41730048"></p>
+</li>
+<li><p>在Mac上启动MYSQL，点击start之后就会变成下面图片的样子<br> <img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.te3zyR/E3E311E8-4E10-4BA7-9978-AEEB706A52ED.png" alt="E3E311E8-4E10-4BA7-9978-AEEB706A52ED"><br> <img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.dPTlVy/2357E996-AB47-43E8-8B41-26330903039E.png" alt="2357E996-AB47-43E8-8B41-26330903039E"></p>
+</li>
+<li><p>之后的都在终端操作</p>
+<ol>
+<li><p>MYSQL默认安装在/usr/local/mysql目录，因此先在终端里进入该目录，再进入mysql目录里的bin目录</p>
+</li>
+<li><p><code>mysql -u root -p</code>这个命令是启动MYSQL的，密码就是刚开始的初始密码，使用<code>SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;你想要的密码&#39;);</code>和<code>FLUSH PRIVILEGES;</code>这两个命令，对密码进行修改</p>
+</li>
+<li><p>最后就是，每次要进去mysql目录里面启动，好麻烦，因此在环境变量里面增加路径。在终端开始的界面，里面执行<code>vim ~/.bash_profile</code>命令（vim操作），添加路径即可，之后可以直接运行，不需要再进去目录</p>
+<p><img src="/var/folders/n3/hxtkhykj6g1fd5zzqvs4gfmc0000gn/T/net.shinyfrog.bear/BearTemp.YVBFbZ/2BEB5C9F-C2AF-4317-8A09-75A5DD5C997A.png" alt="2BEB5C9F-C2AF-4317-8A09-75A5DD5C997A"></p>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>新手入门</category>
+      </categories>
+      <tags>
+        <tag>Mysql, Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql查询</title>
+    <url>/2020/02/03/%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>对MySQL查询的简单操作</p>
+<a id="more"></a>
+
+<ul>
+<li>查询数据表<br><code>select * from 表名</code><br>（*表示的是所有信息，当然也可以是单独的字段信息或者是多个字段信息）<ul>
+<li>去重<br><code>select distinct * from 表名</code></li>
+<li>设置别名<br><code>select *（as 别名） from 表名 （as 别名）</code><br>（对于数据表而言，可以直接通过别名+’.’表示数据表里面的字段）</li>
+<li>限制行数<br><code>select * from 表名 limit 数量（起，终）</code></li>
+<li>排序<br><code>select * from 表名 order by 字段</code><br>（排序可以根据多个条件排序，顺序先是前面的再到后面的）<br>（asc / desc 放在字段后面，asc表示升序，desc表示降序）</li>
+<li>查询<br><code>select * from 表名 where 条件（&gt;&lt;=!)(and)</code><br><code>select * from 表名 where 字段（通常是字符串） like 条件</code><br>（like的条件中有%和_两种，%百分号可以表示任何字符串，并且该字符串可以出现任意次，但是是不注意大小写的。_下画线只匹配单个字符，而不是多个字符，也不是 0 个字符。）</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技巧</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>终端操作数据库</title>
+    <url>/2020/02/03/%E7%BB%88%E7%AB%AF%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<h2 id="终端操作数据库"><a href="#终端操作数据库" class="headerlink" title="终端操作数据库"></a>终端操作数据库</h2><a id="more"></a>
+
+<h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><ul>
+<li><p>登陆数据库<br><code>mysql -u root -p （+ 密码）</code></p>
+</li>
+<li><p>查询数据库服务器中所有数据库<br><code>show databases</code></p>
+</li>
+<li><p>选用某一个数据库中数据<br><code>use 想用的数据库的名字</code><br><code>select * from 数据库里面的表;</code></p>
+</li>
+<li><p>退出<br><code>exit;</code></p>
+</li>
+<li><p>创建数据库<br><code>creat database 名字;</code></p>
+</li>
+<li><p>查看某个数据库中所有的数据表<br><code>show tables;</code></p>
+</li>
+<li><p>创建数据表<br><code>CREATE TABLE 名字（表头 + 表头类型）;</code></p>
+</li>
+<li><p>查看数据表的结构<br><code>describe 名字</code></p>
+</li>
+<li><p>删除数据表<br><code>drop table 表名</code></p>
+</li>
+<li><p>添加数据记录<br><code>INSERT INTO 表</code><br><code>VALUES （‘参数’）</code></p>
+</li>
+<li><p>删除数据<br><code>delete from 表名 where 其中一个参数（一个参数表示一行数据）</code></p>
+</li>
+<li><p>修改数据<br><code>update 表名 set 想要修改的参数 where 修改参数的那一行里的某一个参数</code></p>
+</li>
+<li><p>查看默认字符格式<br><code>SHOW VARIABLES LIKE &#39;character%&#39;;</code></p>
+</li>
+<li><p>修改默认字符格式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set character_set_client&#x3D;utf8;</span><br><span class="line">set character_set_connection&#x3D;utf8;</span><br><span class="line">set character_set_database&#x3D;utf8;</span><br><span class="line">set character_set_results&#x3D;utf8;</span><br><span class="line">set character_set_server&#x3D;utf8;</span><br></pre></td></tr></table></figure></li>
+<li><p>输错命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\c</span><br><span class="line">&#39;\c</span><br></pre></td></tr></table></figure>
+<h3 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h3></li>
+<li><p>数值（从上到下，依次范围逐渐增大，常用INT）</p>
+<ul>
+<li>TINYINT</li>
+<li>SMALLINT</li>
+<li>MEDUIUMINT</li>
+<li>INT &amp; INTEGER</li>
+<li>BIGINT</li>
+<li>FLOAT</li>
+<li>DOUBLE</li>
+<li>DECIMAL</li>
+</ul>
+</li>
+<li><p>日期/时间</p>
+<ul>
+<li>DATE：YYYY-MM-DD</li>
+<li>TIEM：HH:MM:SS</li>
+<li>YEAR：YYYY</li>
+<li>DATETIME：YYYY-MM-DD HH:MM:SS</li>
+<li>TIMESTAMP：YYYYMMDD HHMMSS</li>
+</ul>
+</li>
+<li><p>字符串</p>
+<ul>
+<li>CHAR：定长字符串</li>
+<li>VARCHAR：变长字符串</li>
+<li>TINYBLOB：不超过 255 个字符的二进制字符串</li>
+<li>TINYTEXT：短文本字符串</li>
+<li>BLOB：二进制形式的长文本数据</li>
+<li>TEXT：长文本数据</li>
+<li>MEDIUMBLOB：二进制形式的中等长度文本数据</li>
+<li>MEDIUMTEXT：中等长度文本数据</li>
+<li>LONGBLOB：二进制形式的极大文本数据</li>
+<li>LONGTEXT：极大文本数据</li>
+</ul>
+</li>
+<li><p>注意：<br>日期按照格式，数值和字符串按照大小</p>
+</li>
+</ul>
+<p>#MYSQL</p>
+]]></content>
+      <categories>
+        <category>技巧</category>
+      </categories>
+      <tags>
+        <tag>Mysql, 终端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在eclipse下Jni（Java和C交互）的使用</title>
     <url>/2020/02/03/%E5%9C%A8eclipse%E4%B8%8BJni%EF%BC%88Java%E5%92%8CC%E4%BA%A4%E4%BA%92%EF%BC%89%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="在eclipse下Jni（Java和C交互）的使用"><a href="#在eclipse下Jni（Java和C交互）的使用" class="headerlink" title="在eclipse下Jni（Java和C交互）的使用"></a>在eclipse下Jni（Java和C交互）的使用</h2><p>备注：</p>
@@ -8,8 +210,13 @@
 <li>对于Mac Jni的使用，我是使用Mac的终端调试运行的，但也是可以在eclipse上面使用Jni（但是我自己不太会）</li>
 <li>而对于Window上的Jni而言，网上教程会更多，而且和Mac上面有挺多的东西是相同的</li>
 </ol>
+<a id="more"></a>
+
 <hr>
-<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><pre><code>JNI是Java Native Interface的缩写，它提供了若干的API实现了Java和其他语言的通信（主要是C&amp;C++）。从Java1.1开始，JNI标准成为java平台的一部分，它允许Java代码和其他语言写的代码进行交互。JNI一开始是为了本地已编译语言，尤其是C和C++而设计的，但是它并不妨碍你使用其他编程语言，只要调用约定受支持就可以了。使用java与本地已编译的代码交互，通常会丧失平台可移植性。但是，有些情况下这样做是可以接受的，甚至是必须的。例如，使用一些旧的库，与硬件、操作系统进行交互，或者为了提高程序的性能。JNI标准至少要保证本地代码能工作在任何Java 虚拟机环境。（百度百科介绍）</code></pre><p>总结：</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>JNI是Java Native Interface的缩写，它提供了若干的API实现了Java和其他语言的通信（主要是C&amp;C++）。从Java1.1开始，JNI标准成为java平台的一部分，它允许Java代码和其他语言写的代码进行交互。JNI一开始是为了本地已编译语言，尤其是C和C++而设计的，但是它并不妨碍你使用其他编程语言，只要调用约定受支持就可以了。使用java与本地已编译的代码交互，通常会丧失平台可移植性。但是，有些情况下这样做是可以接受的，甚至是必须的。例如，使用一些旧的库，与硬件、操作系统进行交互，或者为了提高程序的性能。JNI标准至少要保证本地代码能工作在任何Java 虚拟机环境。（百度百科介绍）</p>
+</blockquote>
+<p>总结：</p>
 <ul>
 <li>JNI标准已经存在现在常使用的JDK里面</li>
 <li>JNI用于JAVA与C&amp;C++的交互</li>
@@ -17,30 +224,42 @@
 <li>缺点很明显——丧失平台移植的功能</li>
 </ul>
 <hr>
-<h3 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h3><ol>
-<li><p>编写带有native声明的方法的java类</p>
-<ul>
-<li><p>加载动态库通常使用static块进行加载</p>
-</li>
-<li><p>System.loadLibrary()则是寻找动态库的方法，参数是动态库的名字</p>
-</li>
-<li><p>关键词native表示这个方法将作为本地方法，并且不需要实现，其他的跟平时写的Java方法基本一样，或者说可以理解为，这就是一个接口（interface），不过不是Java自身的接口，而是与C&amp;C++交互的接口</p>
-</li>
-<li><p>```java<br>public class JniDemo<br>{</p>
-<pre><code>static
-{
-    System.loadLibrary(&quot;JniDemo&quot;);
-}
-
-public native double getDoubleFromC(String inputString);</code></pre><p>}</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2. 然后使用javah + java类名生成扩展名为h的头文件</span><br><span class="line"></span><br><span class="line">   * 在Mac的终端或者是window的cmd上面的语句</span><br><span class="line"></span><br><span class="line">   * Java文件所在的文件夹里面进行</span><br><span class="line"></span><br><span class="line">   * JDK8.0之后的格式：javac -h 编译完成的C&amp;C++head文件所要放的位置 编译的Java文件（将javah的命令放进了javac里面了，因此会将Java文件编译出class文件，再对class文件编译，得到想要的head文件）</span><br><span class="line"></span><br><span class="line">   * JDK8.0之前的格式：Javah 编译的class文件（因此需要先将Java文件编译）</span><br><span class="line"></span><br><span class="line">   *</span><br></pre></td></tr></table></figure>
-<p>javac -h /Users/mayer/Documents/JAVA/jniTest/src/ JniDemo.java</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">3. 接着经过cmd或者终端编译后，得到jniDemo_JniDemo.h文件</span><br><span class="line"></span><br><span class="line">   * C&amp;C++头文件就是通过Java的native方法编译出来，属于C语言的函数（只是函数声明），因此还需要新建C文件来对这个函数的实现</span><br><span class="line"></span><br><span class="line">   * C函数命名格式：Java_关键词native修饰的方法所在包的包名_关键词native修饰的方法所在类的类名_关键词native修饰的方法（当然在头文件也会有注释提醒，注意命名格式一定要小心，跟native修饰的方法所在的目录一样才行，否则会报错）</span><br><span class="line"></span><br><span class="line">   * &#96;&#96;&#96;c</span><br><span class="line">     &#x2F;* DO NOT EDIT THIS FILE - it is machine generated *&#x2F;</span><br><span class="line">     #include &lt;jni.h&gt;</span><br><span class="line">     &#x2F;* Header for class jniDemo_JniDemo *&#x2F;</span><br><span class="line">     </span><br><span class="line">     #ifndef _Included_jniDemo_JniDemo</span><br><span class="line">     #define _Included_jniDemo_JniDemo</span><br><span class="line">     #ifdef __cplusplus</span><br><span class="line">     extern &quot;C&quot; &#123;</span><br><span class="line">     #endif</span><br><span class="line">     &#x2F;*</span><br><span class="line">      * Class:     jniDemo_JniDemo</span><br><span class="line">      * Method:    getDoubleFromC</span><br><span class="line">      * Signature: (Ljava&#x2F;lang&#x2F;String;)D</span><br><span class="line">      *&#x2F;</span><br><span class="line">     JNIEXPORT jdouble JNICALL Java_jniDemo_JniDemo_getDoubleFromC</span><br><span class="line">       (JNIEnv *, jobject, jstring);</span><br><span class="line">     </span><br><span class="line">     #ifdef __cplusplus</span><br><span class="line">     &#125;</span><br><span class="line">     #endif</span><br><span class="line">     #endif</span><br></pre></td></tr></table></figure></li>
+<h3 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h3><ul>
+<li>编写带有native声明的方法的java类<ul>
+<li>加载动态库通常使用static块进行加载</li>
+<li>System.loadLibrary()则是寻找动态库的方法，参数是动态库的名字</li>
+<li>关键词native表示这个方法将作为本地方法，并且不需要实现，其他的跟平时写的Java方法基本一样，或者说可以理解为，这就是一个接口（interface），不过不是Java自身的接口，而是与C&amp;C++交互的接口</li>
 </ul>
 </li>
-<li><p>使用C/C++实现本地方法</p>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JniDemo</span></span></span><br><span class="line"><span class="class">   </span>&#123;</span><br><span class="line">   	<span class="keyword">static</span></span><br><span class="line">   	&#123;</span><br><span class="line">   		System.loadLibrary(<span class="string">"JniDemo"</span>);</span><br><span class="line">   	&#125;</span><br><span class="line">   	</span><br><span class="line">   	<span class="function"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">double</span> <span class="title">getDoubleFromC</span><span class="params">(String inputString)</span></span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>在Mac中，需要找到jni.h和jni_md.h两个头文件，只需要在终端使用mdfind命令查找。但是jni_md.h头文件则是在include目录里面的win32文件里，因此需要将其复制出来，跟jni.h头文件相同目录。而且在C文件中，需要将jni.h所在地址添加上去，xcode才能找到jni.h头文件（jni.h文件就在Java的安装目录里）<br>[image:5FB37E83-4A47-4143-B082-5C5ED3B4D38A-3714-0000A78E71F0A39B/281F06E6-985D-46BC-B4B2-2C117EC93BA3.png]</li>
+<li>然后使用javah + java类名生成扩展名为h的头文件<ul>
+<li>在Mac的终端或者是window的cmd上面的语句</li>
+<li>Java文件所在的文件夹里面进行</li>
+<li>JDK8.0之后的格式：javac -h 编译完成的C&amp;C++head文件所要放的位置 编译的Java文件（将javah的命令放进了javac里面了，因此会将Java文件编译出class文件，再对class文件编译，得到想要的head文件）</li>
+<li>JDK8.0之前的格式：Javah 编译的class文件（因此需要先将Java文件编译）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">javac -h &#x2F;Users&#x2F;mayer&#x2F;Documents&#x2F;JAVA&#x2F;jniTest&#x2F;src&#x2F; JniDemo.java</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>接着经过cmd或者终端编译后，得到jniDemo_JniDemo.h文件</p>
+<ul>
+<li><p>C&amp;C++头文件就是通过Java的native方法编译出来，属于C语言的函数（只是函数声明），因此还需要新建C文件来对这个函数的实现</p>
+</li>
+<li><p>C函数命名格式：Java_关键词native修饰的方法所在包的包名_关键词native修饰的方法所在类的类名_关键词native修饰的方法（当然在头文件也会有注释提醒，注意命名格式一定要小心，跟native修饰的方法所在的目录一样才行，否则会报错）</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* DO NOT EDIT THIS FILE - it is machine generated */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;jni.h&gt;</span></span></span><br><span class="line"><span class="comment">/* Header for class jniDemo_JniDemo */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _Included_jniDemo_JniDemo</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _Included_jniDemo_JniDemo</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">* Class:     jniDemo_JniDemo</span></span><br><span class="line"><span class="comment">* Method:    getDoubleFromC</span></span><br><span class="line"><span class="comment">* Signature: (Ljava/lang/String;)D</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">JNIEXPORT jdouble JNICALL Java_jniDemo_JniDemo_getDoubleFromC</span><br><span class="line">   (JNIEnv *, jobject, jstring);</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用C/C++实现本地方法<ul>
+<li>在Mac中，需要找到jni.h和jni_md.h两个头文件，只需要在终端使用mdfind命令查找。但是jni_md.h头文件则是在include目录里面的win32文件里，因此需要将其复制出来，跟jni.h头文件相同目录。而且在C文件中，需要将jni.h所在地址添加上去，xcode才能找到jni.h头文件（jni.h文件就在Java的安装目录里）</li>
 <li>在window中，同样需要找到jni.h和jni_md.h头文件，他们的位置同样在JDK的目录里面（在window中，我是使用vs来实现本地方法，顺便利用vs来生成动态连接库.dll文件）</li>
 <li>在C&amp;C++文件中，可以在刚才生成的头文件中，将函数声明复制粘贴进来，但是要注意函数中要加上参数声明，否则只有参数类型的声明</li>
 <li>C&amp;C++文件中，里面的函数实现，基本跟原来编写C&amp;C++文件一样，只是在返回值和参数使用中注意一下，因为Java和C&amp;C++的类型转换有点麻烦，特别是字符串那一块，而其他基本类型，只要直接转就好了</li>
@@ -52,29 +271,26 @@ public native double getDoubleFromC(String inputString);</code></pre><p>}</p>
 </li>
 </ul>
 </li>
-<li><p>将C/C++编写的文件生成动态连接库</p>
-<ul>
-<li>在Mac中，生成动态连接库还比较简单，只要在终端里面使用命名就行，但是需要进入C&amp;C++文件所在的目录，生成的是.jnilib连接库，这就是我们需要的动态连接库。<br><code>gcc -dynamiclib -I /Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home/include/（jni.h所在目录） JniDemo.c（C&amp;C++文件名字） -o libJniDemo.jnilib（动态连接库名字）</code></li>
+<li>将C/C++编写的文件生成动态连接库<ul>
+<li>在Mac中，生成动态连接库还比较简单，只要在终端里面使用命名就行，但是需要进入C&amp;C++文件所在的目录，生成的是.jnilib连接库，这就是我们需要的动态连接库。</li>
 <li>在window中，就比较麻烦，因为要考虑到64位和32位之间的问题，比如64位的Java不能连接32位的动态连接库，而且想像在Mac中直接在cmd中使用命令编译出连接库，只能编译出32位的动态连接库。因此，我就使用vs（visual stdio2019）进行动态连接库的创建。</li>
 <li>当vs出现‘strcat’: This function or variable may be unsafe的报错的时候，只需要右键项目-&gt;属性-&gt;c/c+±&gt;预处理器-&gt;预处理定义-&gt;编辑-&gt;添加 _CRT_SECURE_NO_WARNINGS</li>
 </ul>
 </li>
-</ol>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Mac中操作</span><br><span class="line">gcc -dynamiclib -I &#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk-12.0.2.jdk&#x2F;Contents&#x2F;Home&#x2F;include&#x2F;（jni.h所在目录） JniDemo.c（C&amp;C++文件名字） -o libJniDemo.jnilib（动态连接库名字）</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><ul>
-<li><p>基本类型之间的转化 —— 直接</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jdouble jdou &#x3D; 4.0;</span><br><span class="line">double dou &#x3D; jou;</span><br></pre></td></tr></table></figure></li>
-<li><p>字符串的转化 —— 指针指向地址</p>
-<ol>
-<li><p>string -&gt; char*</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *nameStr=(*env)-&gt;GetStringUTFChars(env,name,<span class="literal">NULL</span>);`</span><br></pre></td></tr></table></figure>
+<li>基本类型之间的转化 —— 直接<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jdouble jdou &#x3D; 4.0;</span><br><span class="line">double dou &#x3D; jou;</span><br></pre></td></tr></table></figure></li>
+<li>字符串的转化 —— 指针指向地址<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> -&gt; <span class="keyword">char</span>*：</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *nameStr=(*env)-&gt;GetStringUTFChars(env,name,<span class="literal">NULL</span>);`</span><br></pre></td></tr></table></figure>
+
 </li>
-<li><p>char* -&gt; string</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span>* test;</span><br><span class="line">jstring jstr = (*env)-&gt;NewStringUTF(env, test);</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-<li><p>C和C++在jni里对指针的使用是有区别的：</p>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span>* -&gt; string：</span><br><span class="line"><span class="keyword">char</span>* test;</span><br><span class="line">jstring jstr = (*env)-&gt;NewStringUTF(env, test);</span><br></pre></td></tr></table></figure>
+
 <ul>
+<li>C和C++在jni里对指针的使用是有区别的：<ul>
 <li>C：<ul>
 <li>使用JNIEnv* env要这样 (*env)-&gt;方法名(env,参数列表)</li>
 <li>使用JavaVM* vm要这样 (*vm)-&gt;方法名(vm,参数列表)</li>
@@ -99,7 +315,9 @@ public native double getDoubleFromC(String inputString);</code></pre><p>}</p>
   <entry>
     <title>css选择器</title>
     <url>/2020/02/03/CSS%E9%80%89%E6%8B%A9%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="CSS选择器（基础四个）"><a href="#CSS选择器（基础四个）" class="headerlink" title="CSS选择器（基础四个）"></a>CSS选择器（基础四个）</h1><h2 id="标签选择器（元素选择器）"><a href="#标签选择器（元素选择器）" class="headerlink" title="标签选择器（元素选择器）"></a>标签选择器（元素选择器）</h2><ul>
+    <content><![CDATA[<h2 id="CSS选择器（基础四个）"><a href="#CSS选择器（基础四个）" class="headerlink" title="CSS选择器（基础四个）"></a>CSS选择器（基础四个）</h2><a id="more"></a>
+
+<h3 id="标签选择器（元素选择器）"><a href="#标签选择器（元素选择器）" class="headerlink" title="标签选择器（元素选择器）"></a>标签选择器（元素选择器）</h3><ul>
 <li><p>针对一类标签，选择页面上所有这种类型的标签，通常描述为“共性”，无法描述某一个标签的“个性”</p>
 </li>
 <li><p>注意：</p>
@@ -113,7 +331,7 @@ public native double getDoubleFromC(String inputString);</code></pre><p>}</p>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">p&#123;</span><br><span class="line"><span class="css"><span class="selector-tag">font-size</span><span class="selector-pseudo">:14px</span>;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>css<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h2><ul>
+<h3 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h3><ul>
 <li><p>针对某一个特定的标签使用，只能使用一次（但是实际上只会有警告，不会出现error，但还是不推荐一个ID选择器使用多次）</p>
 </li>
 <li><p>ID命名规定：</p>
@@ -131,15 +349,15 @@ public native double getDoubleFromC(String inputString);</code></pre><p>}</p>
 <li><p>注意：</p>
 <ul>
 <li>在html页面（就是在<body></body>中）不能有相同的ID选择器，即使是选择不同类型的标签（比如，有一个名为example的ID选择器选择的p标签，如果再有一个名为example的ID选择器选择的div标签，这是会出现警告的）</li>
-<li>一个标签可以被多个css选择器选择</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-id">#example</span></span></span><br><span class="line">&#123;</span><br><span class="line">color: orange;</span><br><span class="line">background-color: black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li>一个标签可以被多个css选择器选择<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-id">#example</span></span></span><br><span class="line">&#123;</span><br><span class="line">color: orange;</span><br><span class="line">background-color: black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h2 id="子类选择器"><a href="#子类选择器" class="headerlink" title="子类选择器"></a>子类选择器</h2><ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="子类选择器"><a href="#子类选择器" class="headerlink" title="子类选择器"></a>子类选择器</h3><ul>
 <li>针对想要的所有标签，任何的标签都可以携带类选择器带有的属性</li>
 <li>优点（区别）<ul>
 <li>类选择器可以选择多个标签（灵活）</li>
@@ -164,7 +382,7 @@ public native double getDoubleFromC(String inputString);</code></pre><p>}</p>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="css"><span class="selector-class">.example</span>&#123;</span></span><br><span class="line"></span><br><span class="line"><span class="css"><span class="selector-tag">width</span><span class="selector-pseudo">:800px</span>;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="通用选择器"><a href="#通用选择器" class="headerlink" title="通用选择器"></a>通用选择器</h2><ul>
+<h3 id="通用选择器"><a href="#通用选择器" class="headerlink" title="通用选择器"></a>通用选择器</h3><ul>
 <li>将匹配任何标签。但是不推荐使用（通配符*）</li>
 </ul>
 ]]></content>
@@ -178,7 +396,9 @@ public native double getDoubleFromC(String inputString);</code></pre><p>}</p>
   <entry>
     <title>Django</title>
     <url>/2020/02/03/Django%E5%88%9D%E5%AD%A6/</url>
-    <content><![CDATA[<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"><a href="#MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。" class="headerlink" title="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"></a>MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。</h3><ol>
+    <content><![CDATA[<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><a id="more"></a>
+
+<h3 id="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"><a href="#MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。" class="headerlink" title="MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。"></a>MVC设计模式：一种软件设计典范，用一种业务逻辑，使得数据，界面显示分离的方法组织代码。</h3><ol>
 <li>核心思想：解耦（高内聚低耦合）</li>
 <li>优点：降低个个模块之间的耦合性，方便变更，更容易重构代码</li>
 <li>类型：<ol>
