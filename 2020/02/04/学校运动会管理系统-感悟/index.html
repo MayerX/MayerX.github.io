@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+  
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://mayerx.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":false,"style":"flat"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"manual"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="学校运动会管理系统-感悟">
+<meta property="og:url" content="https://mayerx.github.io/2020/02/04/%E5%AD%A6%E6%A0%A1%E8%BF%90%E5%8A%A8%E4%BC%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E6%84%9F%E6%82%9F/index.html">
+<meta property="og:site_name" content="Mayer&#39;s House">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mayerx.github.io/2020/02/04/%E5%AD%A6%E6%A0%A1%E8%BF%90%E5%8A%A8%E4%BC%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E6%84%9F%E6%82%9F/homework.jpg">
+<meta property="og:image" content="https://mayerx.github.io/2020/02/04/%E5%AD%A6%E6%A0%A1%E8%BF%90%E5%8A%A8%E4%BC%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E6%84%9F%E6%82%9F/aHR0cDovL2ltYWdlcy5jbmJsb2dzLmNvbS9jbmJsb2dzX2NvbS9qY3N1L2MvY19maWxlX3JlYWRfZnJvbV9idWZmZXIuR0lG.jpeg">
+<meta property="og:image" content="https://mayerx.github.io/2020/02/04/%E5%AD%A6%E6%A0%A1%E8%BF%90%E5%8A%A8%E4%BC%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E6%84%9F%E6%82%9F/aHR0cDovL2ltYWdlcy5jbmJsb2dzLmNvbS9jbmJsb2dzX2NvbS9qY3N1L2MvY19maWxlX3dyaXRlX3RvX2J1ZmZlci5HSUY.jpeg">
+<meta property="article:published_time" content="2020-02-04T08:58:49.000Z">
+<meta property="article:modified_time" content="2020-02-04T08:58:49.000Z">
+<meta property="article:author" content="Mayer Johnson">
+<meta property="article:tag" content="学校作业">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mayerx.github.io/2020/02/04/%E5%AD%A6%E6%A0%A1%E8%BF%90%E5%8A%A8%E4%BC%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E6%84%9F%E6%82%9F/homework.jpg">
+
+<link rel="canonical" href="https://mayerx.github.io/2020/02/04/%E5%AD%A6%E6%A0%A1%E8%BF%90%E5%8A%A8%E4%BC%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E6%84%9F%E6%82%9F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>学校运动会管理系统-感悟 | Mayer's House</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mayer's House</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Just Interesting</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/MayerX" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mayerx.github.io/2020/02/04/%E5%AD%A6%E6%A0%A1%E8%BF%90%E5%8A%A8%E4%BC%9A%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F-%E6%84%9F%E6%82%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Mayer Johnson">
+      <meta itemprop="description" content="咸鱼生活">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mayer's House">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          学校运动会管理系统-感悟
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-04 16:58:49" itemprop="dateCreated datePublished" datetime="2020-02-04T16:58:49+08:00">2020-02-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <!--
+<div class="note [class] [no-icon]">
+            <p>这里写你需要写的内容</p>
+          </div>
+<p>[class]   : default | primary | success | info | warning | danger.<br>–&gt;</p>
+<p> 这是大二下学期数据结构的第一个实习题，用C语言以小组为单位编写一个学校运动会管理系统的程序。难度而言，对于一个只学过一个学期就没有怎么接触的大学生而言，还是有一点的。</p>
+<a id="more"></a>
+
+<div class="note info">
+            <p>Mac OS 10.15 + Xcode 11.2.1</p>
+          </div>
+
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ol>
+<li><p>在“学校运动会管理系统”中，设有<em>n</em>个单位参加运动会（单位可是学院、系、年级等，应可设定），共有男子比赛项目<em>m</em>，女子比赛项目<em>w</em>。每个参赛单位可以选择参赛项目，运动员参赛项目应有所限制，如最多只能参加3项单项比赛。</p>
+</li>
+<li><p>各项目名次选取应可设置，随系统环境而变化，如可设为：</p>
+<ul>
+<li>参赛人数超过6人，取前5名：第一名得7分，第二名得5分，第三名得3分，第四名得2分，第五名得1分；</li>
+<li>参赛人数不超过6人，取前3名：第一名得5分，第二名得3分，第三名得2分。</li>
+<li>参赛人数不足4人的项目将取消。</li>
+</ul>
+</li>
+<li><p>系统设置内容：软件使用单位；</p>
+<ul>
+<li>参赛单位名称；</li>
+<li>比赛项目设置（注意比赛成绩排序中田赛和竞赛的区别）</li>
+<li>运动员参赛项目限制；</li>
+<li>选取名次设置；</li>
+</ul>
+</li>
+</ol>
+<h2 id="系统功能性需求"><a href="#系统功能性需求" class="headerlink" title="系统功能性需求"></a>系统功能性需求</h2><ol>
+<li>参赛项目发布</li>
+<li>运动员报名登记。登记限制要求按问题描述的要求；</li>
+<li>参赛信息查询。查看参赛学院信息和比赛项目信息；</li>
+<li>秩序册自动生成；</li>
+<li>……</li>
+</ol>
+<h2 id="第一阶段"><a href="#第一阶段" class="headerlink" title="第一阶段"></a>第一阶段</h2><ol>
+<li><p>负责内容：</p>
+<ul>
+<li><p>区分举办方和参赛方的登录</p>
+</li>
+<li><p>举办方负责比赛项目的设置</p>
+</li>
+<li><p>参赛方负责选手报名（以大单位为主体而非个人）</p>
+</li>
+</ul>
+</li>
+<li><p>流程图</p>
+</li>
+</ol>
+<p><img src="homework.jpg" alt="homework"></p>
+<ol start="3">
+<li><p>功能实现</p>
+<ol>
+<li>登陆UI界面的设计 —— 登陆 &amp; 注册</li>
+<li>举办方 &amp; 参赛方的注册</li>
+<li>举办方 &amp; 参赛方的账号密码存储</li>
+<li>举办方<ol>
+<li>举办方的UI界面设计</li>
+<li>赛项设置设计：赛项名字，限制人数，注意事宜</li>
+<li>赛项存储</li>
+</ol>
+</li>
+<li>参赛方<ol>
+<li>参赛方的UI界面设计</li>
+<li>信息表设计：单位姓名，人数，参赛项目及项目人数</li>
+<li>信息表存储</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ol>
+<li><p>字符串常量</p>
+<p>字符串常量是<strong>以 NUL 字节结尾的 0 个或多个字符组成的序列</strong>。<strong>字符串常量是不可被修改的</strong>，一般用一对双引号(“ “)括起的一串字符来表示字符串常量。</p>
+</li>
+<li><p>字符串常量与指针</p>
+<p>字符串常量与指针关系密切，因为字符串常量的值，实际上表示的是存储这些字符的内存空间的地址，更准确地说是字符串常量中第 1 个字符的地址，而不是这些字符本身。因此，在 C 语言中是不能直接进行字符串赋值的（因为没有字符串类型嘛）。在 C 语言中，常通过声明一个指向 char 类型的指针并将其初始化为一个字符串常量的方式来访问一个字符串</p>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *message = <span class="string">"Hello World!"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面的语句也可以拆分成下面两句</span></span><br><span class="line"><span class="keyword">char</span> *message;</span><br><span class="line">message = <span class="string">"Hello World!"</span>;　　　　<span class="comment">// 这句话看起来像是字符串复制，其实不是，只是涉及到指针操作</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>字符数组</p>
+<p>用于存放字符的数组称为字符数组。在 C 语言中，除了字符串常量外，<strong>其他所有字符串都必须存储于字符数组或动态分配的内存中</strong>。定义一个字符数组和定义一个普通数组一样，不同的是字符数组中存放的是字符数据而已。这句话定义并初始化了一个字符数组 Hello。这个数组的长度实际上为 6 ，因为会自动添加一个字符串结束符 ‘\0’。</p>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> charArray[] = &#123;<span class="string">'H'</span>,<span class="string">'e'</span>,<span class="string">'l'</span>,<span class="string">'l'</span>,<span class="string">'o'</span>&#125;;    <span class="comment">// 声明并初始化一个字符数组</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> charArray[] = <span class="string">"Hello World!"</span>;    <span class="comment">// 声明并初始化一个字符数组</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h3><h4 id="strcat-函数"><a href="#strcat-函数" class="headerlink" title="strcat()函数"></a>strcat()函数</h4><p>描述：C 库函数 <strong>char *strcat(char *dest, const char *src)</strong> 把 <strong>src</strong> 所指向的字符串追加到 <strong>dest</strong> 所指向的字符串的结尾。</p>
+<p>声明：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strcat</span><span class="params">(<span class="keyword">char</span> *dest, <span class="keyword">const</span> <span class="keyword">char</span> *src)</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>dest</strong> – 指向目标数组，该数组包含了一个 C 字符串，且足够容纳追加后的字符串</li>
+<li><strong>src</strong> – 指向要追加的字符串，该字符串不会覆盖目标字符串。</li>
+</ul>
+<p>返回值：该函数返回一个指向最终的目标字符串 dest 的指针。</p>
+<h4 id="strcpy-函数"><a href="#strcpy-函数" class="headerlink" title="strcpy()函数"></a>strcpy()函数</h4><p>描述：C 库函数 <strong>char *strcpy(char *dest, const char *src)</strong> 把 <strong>src</strong> 所指向的字符串复制到 <strong>dest</strong>。</p>
+<div class="note warning">
+            <p>如果目标数组 dest 不够大，而源字符串的长度又太长，可能会造成缓冲溢出的情况</p>
+          </div>
+
+<p>声明：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strcpy</span><span class="params">(<span class="keyword">char</span> *dest, <span class="keyword">const</span> <span class="keyword">char</span> *src)</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>dest</strong> – 指向用于存储复制内容的目标数组。</li>
+<li><strong>src</strong> – 要复制的字符串。</li>
+</ul>
+<p>返回值：该函数返回一个指向最终的目标字符串 dest 的指针。</p>
+<h3 id="Mac上的清屏"><a href="#Mac上的清屏" class="headerlink" title="Mac上的清屏"></a>Mac上的清屏</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system(<span class="string">"clear"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><h4 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h4><p>指<strong>程序与数据的交互是以流的形式</strong>进行的。进行C语言文件的存取时，都会先进行“打开文件”操作，这个操作就是在打开数据流，而“关闭文件”操作就是关闭数据流。</p>
+<h4 id="缓冲区（Buffer）"><a href="#缓冲区（Buffer）" class="headerlink" title="缓冲区（Buffer）"></a>缓冲区（Buffer）</h4><p>指在程序执行时，所<strong>提供的额外内存</strong>，可<strong>用来暂时存放做准备执行的数据</strong>。它的设置是为了<strong>提高存取效率</strong>，因为内存的存取速度比磁盘驱动器快得多。</p>
+<p>C语言的文件处理功能分为是否设置“缓冲区”分两种。不设置“缓冲区”必须使用较低级的I/O函数(包含在头文件io.h和fcntl.h中)来直接对磁盘存取，但存在存取速度慢，并且不是C的标准函数（跨平台操作时容易出问题）。因此常常使用设置“缓冲区”的方式对文件进行处理</p>
+<p>当使用标准I/O函数(包含在头文件stdio.h中)时，系统会<strong>自动设置缓冲区</strong>，并通过数据流来读写文件。当进行文件读取时，不会直接对磁盘进行读取，而是<strong>先打开数据流</strong>，将磁盘上的文件信息拷贝到缓冲区内，然后程序再从缓冲区中读取所需数据。</p>
+<p><img src="aHR0cDovL2ltYWdlcy5jbmJsb2dzLmNvbS9jbmJsb2dzX2NvbS9qY3N1L2MvY19maWxlX3JlYWRfZnJvbV9idWZmZXIuR0lG.jpeg" style="zoom: 67%;" /> <img src="aHR0cDovL2ltYWdlcy5jbmJsb2dzLmNvbS9jbmJsb2dzX2NvbS9qY3N1L2MvY19maWxlX3dyaXRlX3RvX2J1ZmZlci5HSUY.jpeg" style="zoom:67%;" /></p>
+<h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><ul>
+<li>文件类型：文本文件（以字符编码的方式进行保存），二进制文件（将内存中数据原封不至文件中，适用于非字符为主的数据，优点在于存取速度快，占用空间小，以及可随机存取数据）</li>
+<li>文件存取方式：顺序存取方式（从上往下，一笔一笔读取文件的内容。保存数据时，将数据附加在文件的末尾），随机存取方式（多半以二进制文件为主。通常以结构为单位）</li>
+</ul>
+<h4 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h4><p>函数原型为：_CRTIMP FILE * __cdecl fopen(const char *, const char *);</p>
+<p>第一个参数是<strong>文件地址</strong>，第二个参数是<strong>打开模式</strong>。打开成功之后，函数返回一个结构指针地址，否则返回一个NULL。</p>
+<div class="note warning">
+            <p>在使用打开文件的时候，最好使用if语句判断是否读取成功，条件是是否等于NULL</p>
+          </div>
+
+<div class="note warning">
+            <p>在输入文件地址的时候，由于反斜杠\是控制字符，所以必须再加一个反斜</p>
+          </div>
+
+<p>打开模式：</p>
+<ol>
+<li>“r”：只能从文件中读数据，该文件必须先存在，否则打开失败</li>
+<li>“w”：只能向文件写数据，若指定的文件不存在则创建它，如果存在则先删除它再重建一个新文件</li>
+<li>“a”：向文件增加新数据(不删除原有数据)，若文件不存在则打开失败，打开时位置指针移到文件末尾</li>
+<li>“r+”：可读/写数据，该文件必须先存在，否则打开失败</li>
+<li>“w+”：可读/写数据，用该模式打开新建一个文件，先向该文件写数据，然后可读取该文件中的数据</li>
+<li>“a+”：可读/写数据，原来的文件不被删去，位置指针移到文件末尾</li>
+</ol>
+<div class="note info">
+            <p>打开二进制文件的模式与打开文本文件的含义是一样的，不同的是模式名称里面多一个字母’b’，以表示以二进制形式打开文件。</p>
+          </div>
+
+<h4 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h4><p>函数原型为：_CRTIMP int __cdecl fclose(FILE *);</p>
+<p>关闭成功<strong>返回值0</strong>，否则返回<strong>非零值</strong>。</p>
+<div class="note info">
+            <p>在执行完文件的操作后，要进行“关闭文件”操作。虽然程序在结束前会自动关闭所有的打开文件，但文件打开过多会导致系统运行缓慢，这时就要自行手动关闭不再使用的文件，来提高系统整体的执行效率。</p>
+          </div>
+
+<h4 id="字符存取文件"><a href="#字符存取文件" class="headerlink" title="字符存取文件"></a>字符存取文件</h4><p>函数原型为：</p>
+<p>_CRTIMP int __cdecl fputc(int, FILE *);</p>
+<p>_CRTIMP int __cdecl fgetc(FILE *);</p>
+<p>_CRTIMP int __cdecl feof(FILE *);</p>
+<p>字符读取函数fgetc()可从文件数据流中一次读取一个字符，<strong><em>然后读取光标移动到下一个字符</em></strong>，并逐步将文件的内容读出。</p>
+<p>如果字符读取成功，则返回所读取的字符，否则返回EOF(end of file)。EOF是表示数据结尾的常量，<strong>真值为-1</strong>。另外，要判断文件是否读取完毕，<strong>可利用feof()进行检查</strong>。未完返回0，已完返回非零值。</p>
+<h4 id="字符串存取文件"><a href="#字符串存取文件" class="headerlink" title="字符串存取文件"></a>字符串存取文件</h4><p>函数原型为：</p>
+<p>_CRTIMP int __cdecl fputs(const char *, FILE *); </p>
+<p>_CRTIMP char * __cdecl fgets(char *, int n, FILE *);</p>
+<ol>
+<li>参数n为要求得到的字符个数，但只从fp指向的文件输入<strong>n-1个字符</strong>，然后在<strong>最后加一个’\0’字符</strong>，因此得到的字符串共有n字符，把它们放在字符数组str中。如果在读完n-1个字符之前遇到换行符或EOF，读入结束。fputs函数的作用是向指定文件输出一个字符串，如：fputs(“Hey”, fp);</li>
+<li>把字符串”Hey”输出到fp指向的文件。fputs函数的第一个参数可以<strong>是字符串常量、字符数组名或字符型指针</strong>。若输出成功，则返回0，否则返回EOF。</li>
+</ol>
+<h4 id="格式化存取文件"><a href="#格式化存取文件" class="headerlink" title="格式化存取文件"></a>格式化存取文件</h4><p>函数原型为：</p>
+<p>_CRTIMP int __cdecl fprintf(FILE *, const char *, …);</p>
+<p>_CRTIMP int __cdecl fscanf(FILE *, const char *, …);</p>
+<p>它们与printf和scanf函数相仿，都是格式化读写函数。不同的是：fprintf和fscanf函数的读写对象不是终端(标准输入输出)，而是磁</p>
+<p>盘文件。printf函数是将内容输出到终端(屏幕)，因此，fprintf就是将内容输出到磁盘文件了。</p>
+<h4 id="指针重返"><a href="#指针重返" class="headerlink" title="指针重返"></a>指针重返</h4><p>函数原型为：</p>
+<p>_CRTIMP void __cdecl rewind(FILE *);</p>
+<p>rewind函数的作用是使位置指针重返回文件的开头，属于文件的定位。</p>
+<h4 id="数据块存取文件（二进制）"><a href="#数据块存取文件（二进制）" class="headerlink" title="数据块存取文件（二进制）"></a>数据块存取文件（二进制）</h4><p>函数原型：</p>
+<p>_CRTIMP size_t __cdecl fread(void *, size_t, size_t, FILE *);</p>
+<p>_CRTIMP size_t __cdecl fwrite(const void *, size_t, size_t, FILE *);</p>
+<p>当要求一次存取一组数据（如，一个数组、一个结构体变量的值），fread和fwrite函数可以解决该类问题。它们的调用形式一般为：</p>
+<p>fread(buffer, size, count, fp);<br>fwrite(buffer, size, count, fp);</p>
+<ol>
+<li>buffer：对于fread来说，指的是读入数据的存放地址；对于fwrite来说，是要输出数据的地址。</li>
+<li>size：读写数据时，每笔数据的大小</li>
+<li>count：读写数据的笔数</li>
+<li>fp：文件指针</li>
+</ol>
+<h4 id="随机存取函数"><a href="#随机存取函数" class="headerlink" title="随机存取函数"></a>随机存取函数</h4><p>函数原型：</p>
+<p>_CRTIMP int __cdecl fseek(FILE *, long, int);</p>
+<p>对流式文件可以进行顺序读写，也可以进行随机读写。关键在于控制文件的位置指针，如果位置指针是按字节位置顺序移动的，就是顺序读写。如果能将位置指针按需要移动到任意位置，就可以实现随机读写。所谓随机读写，是指读完上一个字符(字节)后，并不一定要读写其后续的字符(字节)，而可以读写文件中任意位置上所需要的字符(字节)。该函数的调用形式为：</p>
+<ol>
+<li><p>fseek(fp, offset, start);</p>
+</li>
+<li><p>start：起始点。用0、1、2代替。0代表<strong>文件开始</strong>，名字为SEEK_SET，1代表<strong>当前位置</strong>，名字为SEEK_CUR，2代表<strong>文件末尾</strong>，名字为SEEK_END。</p>
+</li>
+<li><p>fseek()函数<strong>一般用于二进制文</strong>件，因为文本文件要发生字符转换，计算位置时往往会发生混乱。</p>
+</li>
+</ol>
+-->
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E6%A0%A1%E4%BD%9C%E4%B8%9A/" rel="tag"># 学校作业</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/03/Hexo%E7%AE%80%E7%95%A5%E7%89%88%E6%95%99%E7%A8%8B/" rel="prev" title="Hexo简略版教程">
+      <i class="fa fa-chevron-left"></i> Hexo简略版教程
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Mayer Johnson</p>
+  <div class="site-description" itemprop="description">咸鱼生活</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+        
+        
+          <li>
+            <a href="/" title="" target="_blank"></a>
+          </li>
+        
+          <li>
+            <a href="/" title="" target="_blank"></a>
+          </li>
+        
+          <li>
+            <a href="/" title="" target="_blank"></a>
+          </li>
+        
+          <li>
+            <a href="/" title="" target="_blank"></a>
+          </li>
+        
+          <li>
+            <a href="/" title="" target="_blank"></a>
+          </li>
+        
+      </ul>
+    </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mayer Johnson</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">17k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">15 分钟</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0, 0, 0' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID: 'd8dd7d384be412a8d659',
+      clientSecret: '1c39e05a8770adcb5546dda2b70a6eade1b162bf',
+      repo: 'MayerX.github.io',
+      owner: 'MayerX',
+      admin: ['MayerX'],
+      id: '33d79cc50e3293b0dc2d591915861c46',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
